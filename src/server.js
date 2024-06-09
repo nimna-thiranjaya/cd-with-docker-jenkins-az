@@ -14,11 +14,15 @@ const studentRouter = require("./routes/student.route");
 // Use Routes
 app.use("/student", studentRouter);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Student Management System");
+});
+
 const start = async () => {
   const port = process.env.PORT || 3000;
   try {
-    app.listen(3000, () => {
-      console.log("Server is running on port 8000");
+    app.listen(port, () => {
+      console.log(`SERVER IS RUNNING ON PORT ${port}`);
       connectDB();
     });
   } catch (e) {
