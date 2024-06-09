@@ -1,12 +1,16 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/database.config");
+const cors = require("cors");
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Enable CORS
+app.use(cors());
 
 // Import Routes
 const studentRouter = require("./routes/student.route");
