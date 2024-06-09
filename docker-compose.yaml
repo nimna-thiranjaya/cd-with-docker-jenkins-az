@@ -43,3 +43,4 @@ services:
     image: my-app-frontend:v1
     depends_on:
       - backend
+ 
